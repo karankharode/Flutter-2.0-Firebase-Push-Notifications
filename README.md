@@ -14,7 +14,9 @@ That too at an unbelievable price.
 
 This repository is a tutorial for implementing the Push Notifications in Flutter using Firebase Cloud Messaging and Flutter Local Notifications.
 
-![Image](screenshots/ss1.png)  ![Image](screenshots/ss2.png)
+![Image](screenshots/ss1.png)  
+---
+![Image](screenshots/ss2.png)
 
 For video tutorial go to my Youtube channel by clicking on the link below
 
