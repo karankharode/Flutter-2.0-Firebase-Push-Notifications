@@ -6,7 +6,8 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
     'high_importance_channel', // id
     'High Importance Notifications', // title
-    'This channel is used for important notifications.', // description
+    description:
+        'This channel is used for important notifications.', // description
     importance: Importance.high,
     playSound: true);
 
@@ -24,7 +25,8 @@ Future<void> main() async {
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   await flutterLocalNotificationsPlugin
-      .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
+      .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin>()
       ?.createNotificationChannel(channel);
 
   await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
@@ -75,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
               android: AndroidNotificationDetails(
                 channel.id,
                 channel.name,
-                channel.description,
+                channelDescription: channel.description,
                 color: Colors.blue,
                 playSound: true,
                 icon: '@mipmap/ic_launcher',
@@ -115,7 +117,8 @@ class _MyHomePageState extends State<MyHomePage> {
         "Testing $_counter",
         "How you doin ?",
         NotificationDetails(
-            android: AndroidNotificationDetails(channel.id, channel.name, channel.description,
+            android: AndroidNotificationDetails(channel.id, channel.name,
+                channelDescription: channel.description,
                 importance: Importance.high,
                 color: Colors.blue,
                 playSound: true,
